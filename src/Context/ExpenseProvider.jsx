@@ -3,7 +3,7 @@ import React, { createContext, useReducer } from 'react'
 export const ExpenseContext = createContext()
 function ExpenseProvider({ children }) {
     const initialState = [
-        
+
     ]
 
     const reducer = (state, action) => {
@@ -12,7 +12,7 @@ function ExpenseProvider({ children }) {
                 return [...state, action.payload];
 
             default:
-                break;
+                return state;
         }
     }
     const [state, dispatch] = useReducer(reducer, initialState)
